@@ -9,7 +9,7 @@ using namespace std;
 //funcion que genera datos aleatorios
 vector<int> generate_random_data(size_t size){
     vector<int> data(size);
-    generate(data.begin(), data.end(), [] () {return rand() % 10000;});
+    generate(data.begin(), data.end(), [] () {return rand() % 100000;});    //MODIFICADO AQUI
     return data;
 }
 
@@ -17,7 +17,7 @@ vector<int> generate_random_data(size_t size){
 //funcion que genera datos ordenados
 vector<int> generate_sorted_data(size_t size){
     vector<int> data(size);
-    generate(data.begin(), data.end(), []() { return rand() % 10000; });
+    generate(data.begin(), data.end(), []() { return rand() % 100000; });           //MODIFICADO AQUI
     return data;
 }
 
@@ -27,10 +27,10 @@ vector<int> generate_partial_sorted_data(size_t size){
     vector<int> data(size);
     size_t sorted_size = static_cast<size_t>(size * 0.7);
     for (size_t i = 0; i < sorted_size; ++i) {
-        data[i] = i;                            // Parte ordenada
+        data[i] = i;                                        // Parte ordenada
     }
     for (size_t i = sorted_size; i < size; ++i) {
-        data[i] = rand() % 10000;                 // Parte aleatoria
+        data[i] = rand() % 10000;                            // Parte aleatoria   // Cambia el tamaño según sea necesario
     }
     return data;
 }
@@ -41,7 +41,7 @@ vector<int> generate_partial_sorted_data(size_t size){
 vector<int> generate_data_with_duplicates(size_t size){
     vector<int> data(size);
     for (size_t i = 0; i < size; ++i){
-        data[i] = rand() % 10000;                                           // Duplicados en el rango de 0 a 99
+        data[i] = rand() % 1000;                       // Duplicados en el rango de 0 a 999 ojo aqui
     }
     return data;
 }
@@ -62,7 +62,7 @@ void save_to_binary_file(const string& filename, const vector<int>& data){
 
 
 int main(){
-    size_t dataset_size = 10000;                                            // Cambia el tamaño según sea necesario
+    size_t dataset_size = 100000;                                            // Cambia el tamaño según sea necesario
 
     // Generar diferentes tipos de datasets
     vector<int> random_data = generate_random_data(dataset_size);
@@ -120,9 +120,7 @@ int main(){
 
     std::cout << "\n";*/
 
-    //creacion de un archivo binario para que sea menos pesado, porque el DataSet debe ser grande
-    
-    // Función para guardar datos en un archivo binario
+
 
     return 0;
 

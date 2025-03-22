@@ -45,7 +45,7 @@ std::vector<int> read_from_binary_file(const std::string& filename, size_t size)
 }
 
 int main() {
-    size_t dataset_size = 10000; // Cambia esto al tamaño de tus datasets
+    size_t dataset_size = 1000; // Cambia esto al tamaño de tus datasets
 
     // Leer los datos desde los archivos binarios
     std::vector<int> random_data = read_from_binary_file("random_data.bin", dataset_size);
@@ -54,16 +54,16 @@ int main() {
     std::vector<int> data_with_duplicates = read_from_binary_file("data_with_duplicates.bin", dataset_size);
 
     // Aplicar Quicksort y mostrar resultados
-    std::vector<std::string> dataset_names = {"Datos aleatorios", "Datos ordenados", "Datos parcialmente ordenados", "Datos con duplicados"};
+    std::vector<std::string> dataset_names = {"Datos aleatorios", "Datos ordenados", "Datos parcialmente ordenados", "Datos con duplicados"}; 
     std::vector<std::vector<int>*> datasets = {&random_data, &sorted_data, &partial_sorted_data, &data_with_duplicates};
 
     for (size_t i = 0; i < datasets.size(); ++i) {
-        /*std::cout << dataset_names[i] << " (sin ordenar): ";
+        std::cout << dataset_names[i] << " (sin ordenar): ";
         for (const int& num : *datasets[i]) {
             std::cout << num << " ";
-        }*/
+        }
         std::cout << std::endl;
-
+        std::cout << "\n";
         quicksort(*datasets[i], 0, datasets[i]->size() - 1);
 
         std::cout << dataset_names[i] << " (ordenado): ";
@@ -71,6 +71,8 @@ int main() {
             std::cout << num << " ";
         }
         std::cout << std::endl << std::endl;
+        std::cout << std::endl; //
+        std::cout << "\n";
     }
 
     return 0;
