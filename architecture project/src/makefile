@@ -1,7 +1,7 @@
 //plantilla
 
 # Nombre del ejecutable
-TARGET = bin/arquitectura
+TARGET = arquitectura project
 
 # Compilador
 CC = g++
@@ -11,7 +11,7 @@ CFLAGS = -Wall -Wextra -Werror
 
 # Directorios
 SRC_DIR = src
-OBJ_DIR = obj
+OBJ_DIR = output
 
 # Archivos fuente
 SRCS = $(wildcard $(SRC_DIR)/*.cpp)
