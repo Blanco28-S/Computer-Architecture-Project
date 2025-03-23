@@ -99,3 +99,35 @@ int main() {
     return 0;
 
 }
+
+
+/*
+
+#include <iostream>
+#include <vector>
+#include <cstdlib>
+#include <ctime>
+
+// Aquí incluirías la definición de la clase Cache y los algoritmos de ordenamiento
+
+int main() {
+    // Configuración de la caché
+    size_t cache_size = 1024; // 1 KB
+    size_t block_size = 64;    // 64 bytes
+    Cache cache(cache_size, block_size);
+
+    // Generar un dataset aleatorio
+    std::vector<int> data(10000);
+    std::srand(std::time(0));
+    for (size_t i = 0; i < data.size(); ++i) {
+        data[i] = std::rand() % 10000; // Números aleatorios entre 0 y 9999
+    }
+
+    // Ejecutar MergeSort y medir accesos a caché
+    mergeSort(data, 0, data.size() - 1, cache); // Asegúrate de que mergeSort esté definido
+
+    // Imprimir estadísticas de la caché
+    cache.printStats();
+
+    return 0;
+}*/
