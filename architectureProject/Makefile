@@ -1,30 +1,16 @@
-CXX := g++
-CXXFLAGS := -std=c++11 -Wall -Wextra -Iinclude -O3
-LDFLAGS := 
-TARGET := cache_sort_analysis
+.SILENT:
 
-SRC_DIR := src
-BUILD_DIR := build
-TEST_DIR := tests
+mergesort: compile
+	g++ -o src/mergesort src/mergesort.cpp
+	./src/mergesort
 
-SRCS := $(wildcard $(SRC_DIR)/*.cpp)
-OBJS := $(patsubst $(SRC_DIR)/%.cpp,$(BUILD_DIR)/%.o,$(SRCS))
-DEPS := $(OBJS:.o=.d)
 
-all: directories $(TARGET)
-
-directories:
-	@mkdir -p $(BUILD_DIR)
-
-$(TARGET): $(OBJS)
-	$(CXX) $(CXXFLAGS) $^ -o $@ $(LDFLAGS)
-
-$(BUILD_DIR)/%.o: $(SRC_DIR)/%.cpp
-	$(CXX) $(CXXFLAGS) -MMD -MP -c $< -o $@
+quicksort: compile
+	g++ -o src/quicksort src/quicksort.cpp
+	./src/quicksort
+compile:
+	g++ -o src/data src/Data.cpp
+	./src/data
 
 clean:
-	rm -rf $(BUILD_DIR) $(TARGET).exe
-
--include $(DEPS)
-
-.PHONY: all directories clean
+	-rm -f *.bin core
