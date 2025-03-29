@@ -29,3 +29,35 @@ para minimizar E/S.
 #
 
 
+Explicación del Diseño
+Simulador de Caché: Implementé una caché de correspondencia directa porque:
+
+Es más simple de implementar y entender
+
+Proporciona un buen equilibrio entre complejidad y rendimiento
+
+Es adecuada para analizar patrones de acceso a memoria
+
+Algoritmos de Ordenamiento:
+
+Implementé QuickSort y MergeSort con callbacks para rastrear accesos a memoria
+
+Cada acceso a un elemento del array se registra en el simulador de caché
+
+Análisis de Memoria:
+
+La clase MemoryAnalyzer coordina todo el proceso
+
+Genera datos aleatorios y los mezcla para evitar sesgos
+
+Mide hits, misses, tasa de hits y tiempo de ejecución
+
+Experimentos:
+
+Compara el rendimiento con diferentes tamaños de datos
+
+Analiza el impacto de diferentes configuraciones de caché
+
+Proporciona resultados tabulados para fácil interpretación
+
+Este proyecto permite analizar cómo los diferentes algoritmos de ordenamiento interactúan con la jerarquía de memoria, lo que es crucial para optimizar el rendimiento en aplicaciones que manejan grandes volúmenes de datos.
