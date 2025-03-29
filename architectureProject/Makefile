@@ -9,8 +9,7 @@ quicksort: compile
 	g++ -o src/quicksort src/quicksort.cpp
 	./src/quicksort
 compile:
-	g++ -o src/data src/Data.cpp
-	./src/data
-
+	g++ src/Data.cpp -o src/Data
+	./src/Data
 clean:
 	-rm -f *.bin core
