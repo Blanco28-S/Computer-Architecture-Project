@@ -1,6 +1,12 @@
+
+
+
+
 /*
 simulador de cache (correspondencia directa)
 */
+
+
 
 #ifndef CACHE_SIMULATOR_H
 #define CACHE_SIMULATOR_H

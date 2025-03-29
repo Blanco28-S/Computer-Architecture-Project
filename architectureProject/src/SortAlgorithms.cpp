@@ -21,6 +21,8 @@ void SortAlgorithms::quickSortHelper(std::vector<int>& data, int low, int high, 
     }
 }
 
+
+
 int SortAlgorithms::partition(std::vector<int>& data, int low, int high, std::function<void(uint64_t)> callback) {
     int pivot = data[high];
     simulateMemoryAccess(reinterpret_cast<uint64_t>(&data[high]), callback);
